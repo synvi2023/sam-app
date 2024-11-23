@@ -42,8 +42,8 @@ jobs:
       - run: |
           # trigger the tests here
           echo 'Running unit tests'
-          npm install
-          npm run test
+          pip3 install pytest pytest-mock
+          python3 -m pytest tests/unit
 
   delete-feature:
     if: startsWith(github.event.ref, 'feature') && github.event_name == 'delete'
